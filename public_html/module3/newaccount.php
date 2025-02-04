@@ -13,8 +13,12 @@ if (!isset($_SESSION['token'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Account</title>
     <link rel="stylesheet" type="text/css" href="login.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
+    <form action= "index.php" method="GET">
+        <button name='back' type='submit' class='back'>Back to Login</button>
+    </form>
     <h1>Sign Up</h1>
     <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
         <label>Username</label> <br>
@@ -27,6 +31,11 @@ if (!isset($_SESSION['token'])) {
         <input type="password" name="confirmpassword" required>
         <input type="hidden" name="token" value="<?php echo $_SESSION['token'];?>" />
         <br><br>
+        <!-- code line below from https://developers.google.com/recaptcha/docs/display -->
+        <div class="captcha-container">
+            <div class="g-recaptcha" data-sitekey="6LfB-coqAAAAADiLI_G0u-D4BVV-HEwLiLC3JmhU"></div>
+        </div>
+        <br><br>
         <button name="newsignup" type="submit">Sign Up</button><br><br>
     </form>
     <?php
@@ -37,11 +46,27 @@ if (!isset($_SESSION['token'])) {
         }
     }
     if(isset($_POST['newsignup'])){
+        //recapthca verify on backend: https://www.geeksforgeeks.org/google-recaptcha-integration-in-php/
+        $secret_key = "6LfB-coqAAAAAFGyUcNUV7MhprF6qJ33mWwtUdne"; 
+        $recaptcha_response = $_POST['g-recaptcha-response'];
+        $url = 'https://www.google.com/recaptcha/api/siteverify?secret='
+        . $secret_key . '&response=' . $recaptcha_response;
+        $response = file_get_contents($url);
+        $response = json_decode($response);
+        if (!$response->success) {
+            die ("reCAPTCHA verification failed. Please try again.");
+        }
         $newuser = htmlentities($_POST['newuser']);
         $newpassword = trim($_POST['newpassword']);
         $confirmpassword = trim($_POST['confirmpassword']);
         if($newpassword !== $confirmpassword){
             echo "<p class='p1'>Passwords do not match</p>";
+        }
+        else if(strlen($newpassword)<=10){
+            echo "<p class='p1'>Password needs to be at least 10 characters</p>";
+        }
+        else if(!preg_match("/[A-Z]/", $newpassword) || !preg_match("/[0-9]/", $newpassword)){
+            echo "<p class='p1'>Password must include an uppercase letter and a number</p>";
         }
         else{
             $stmt = $mysqli->prepare("SELECT COUNT(*) FROM users WHERE username=?");

@@ -34,7 +34,6 @@
         <button type="submit">Sign Up</button> <br><br>
         <br><br>
     </form>
-    <script>
     <?php
         //from wiki
         if(isset($_POST['token'])){
@@ -42,6 +41,7 @@
                 die("Request forgery detected");
             }
         }
+
         if(isset($_SESSION['user_id'])){
             header("Location: newssite.php");
             exit;

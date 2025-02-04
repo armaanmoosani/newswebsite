@@ -1,16 +1,16 @@
 h1{ 
     text-align:center;
     font-size: 6vw;
-    color:rgb(13, 35, 56); 
+    color:rgb(240, 240, 240); 
+    background-color: rgb(10, 25, 47); 
     font-family: Arial, sans-serif; 
-    background-color: rgb(153, 197, 236); 
     font-weight: bold;
     text-shadow: 3px 3px 5px;
 }
 
 body{
-    color:rgb(13, 35, 56); 
-    background-color: rgb(153, 197, 236); 
+    color:rgb(240, 240, 240); 
+    background-color: rgb(10, 25, 47); 
     margin: 0; 
     height: 100vh; 
     justify-content: center;
@@ -30,37 +30,9 @@ body{
     top: 10px;      
     right: 10px;    
     padding: 10px 20px;
-    background-color: rgb(153, 197, 236); 
-    color: rgb(13, 35, 56);
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.delete{
-    position: fixed;
-    font-weight: bold;
-    bottom: 50px;     
-    right: 10px;    
-    padding: 10px 20px;
-    background-color: rgb(153, 197, 236); 
-    color: rgb(13, 35, 56);
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.upload{
-    font-weight: bold;
-    padding: 10px 20px;
-    background-color: rgb(153, 197, 236); 
-    color: rgb(13, 35, 56);
-    font-size: 16px;
-    cursor: pointer;
-}
-::file-selector-button{
-    font-weight: bold;   
-    padding: 10px 20px;
-    background-color: rgb(153, 197, 236); 
-    color: rgb(13, 35, 56);
+    color:rgb(240, 240, 240); 
+    border: 2px solid rgb(255, 255, 255); 
+    background-color: rgb(10, 25, 47); 
     font-size: 16px;
     cursor: pointer;
 }
