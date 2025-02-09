@@ -68,7 +68,14 @@
             if($cnt == 1 && password_verify($pwd_guess, $pwd_hash)){
                 $_SESSION['user_id'] = $user_id;
                 $_SESSION['token'] = bin2hex(random_bytes(32));
+                if(isset($_SESSION['redirect'])){
+                    $redirect = $_SESSION['redirect'];
+                    unset($_SESSION['redirect']);
+                    header("Location: $redirect");
+                    exit;
+                }
                 header("Location: newssite.php");
+                exit;
             } else{
                 echo "<p class='p1'>Invalid user or password</p>";
             }
