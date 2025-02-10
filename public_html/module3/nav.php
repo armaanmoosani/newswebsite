@@ -27,7 +27,7 @@
                     <li><a href="category.php?category=technology">Technology</a></li>
                     <li><a href="category.php?category=us">U.S.</a></li>
                     <li><a href="category.php?category=sports">Sports</a></li>
-                    <li><a href="category.php?category=politics">Politics</a></li>
+                    <li><a href="category.php?category=business">Business</a></li>
                     <li><a href="category.php?category=world">World</a></li>
                 </ul>
             </li>

@@ -17,6 +17,7 @@
 <body>
     <h1>News</h1>
     <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
+        <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>" />
         <label>Username</label> <br>
         <input type="text" name="user" required>
         <br><br>
@@ -41,7 +42,6 @@
                 die("Request forgery detected");
             }
         }
-
         if(isset($_SESSION['user_id'])){
             header("Location: newssite.php");
             exit;
