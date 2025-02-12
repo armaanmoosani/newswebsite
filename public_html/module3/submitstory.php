@@ -6,10 +6,11 @@
     <link rel="stylesheet" type="text/css" href="submitstory.css">
 </head>
 <body>
-    <h1>Submit Story</h1><br>
+    <h1>Submit Story</h1>
 <?php
     session_start();
     require "database.php";
+    require 'nav.php';
     if (!isset($_SESSION['token'])) {
         $_SESSION['token'] = bin2hex(random_bytes(32)); 
     }
@@ -48,15 +49,11 @@
         exit;
     }
     
-    if(isset($_GET['loggedin'])){
-        $submitstory = htmlentities($_GET['loggedin']);
-        if($submitstory == "true"){ ?>
-            <form action= "newssite.php" method="GET">
-                <button name='back' type='submit' class='back'>Back</button>
-            </form>
+    if(isset($_SESSION['user_id'])){
+            ?>
             <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
                 <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>" />
-                <label class="titlelabel">Title:</label><br><br>
+                <br><label class="titlelabel">Title:</label><br><br>
                 <input type="text" class="title" name="title" required><br><br>
                 <label class="bodylabel">Body:</label><br><br>
                 <textarea name="body" class="body" rows="10" cols="33" required></textarea><br><br>
@@ -71,17 +68,11 @@
                 <button name="submit" type="submit">Submit</button><br><br>      
             </form>
         <?php 
-        } 
-        elseif($submitstory=="false"){
-            $_SESSION['redirect'] = "submitstory.php";
-            header("Location: index.php");
-            exit;
-        }
-        else{
-            header("Location: failure.html");
-            exit;
-        }
-    }   
+        }  
+    else{
+        header("Location: failure.html");
+        exit;
+    }
 ?>
 </body>
 </html>

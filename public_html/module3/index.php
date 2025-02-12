@@ -4,6 +4,9 @@
     if (!isset($_SESSION['token'])) {
         $_SESSION['token'] = bin2hex(random_bytes(32)); 
     }
+    if (isset($_POST['storynotloggedin'])) {
+        $_SESSION['redirect'] = "submitstory.php";
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,14 +72,17 @@
                 $_SESSION['user_id'] = $user_id;
                 $_SESSION['token'] = bin2hex(random_bytes(32));
                 if(isset($_SESSION['redirect'])){
-                    $redirect = $_SESSION['redirect'];
-                    unset($_SESSION['redirect']);
-                    header("Location: $redirect");
+                    $redirect_page = $_SESSION['redirect'];
+                    unset($_SESSION['redirect']);  
+                    header("Location: $redirect_page");
                     exit;
                 }
-                header("Location: newssite.php");
-                exit;
-            } else{
+                else{
+                    header("Location: newssite.php");
+                    exit;
+                }
+            } 
+            else{
                 echo "<p class='p1'>Invalid user or password</p>";
             }
         }

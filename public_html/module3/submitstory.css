@@ -3,10 +3,12 @@
 h1{
     text-align: center;
     font-size: 7ch;
+    color: white;
 }
 body{
-    background-color: rgb(245, 245, 245);
+    background-color: rgb(10, 25, 47);
     text-align: center;
+    color: white;
 }
 .title{
     font-size: x-large;
@@ -14,7 +16,9 @@ body{
 }
 .titlelabel{
     font-size: x-large;
+    color: white;
 }
+
 .body{
     font-size: medium;
     font-family: 'Merriweather', serif;
@@ -22,6 +26,7 @@ body{
 }
 .bodylabel, .url{
     font-size: larger;
+    color: white;
 }
 .category {
     display: none;
@@ -30,8 +35,8 @@ body{
     display: inline-block;
     padding: 10px;
     margin: 5px;
-    background-color: rgb(238, 238, 238);
-    border: 1px solid rgb(204, 204, 204);
+    background-color: #708090;
+    border: 1px solid #B0C4DE;
     border-radius: 10px;
     cursor: pointer;
   }
@@ -60,16 +65,4 @@ body{
     background-color: purple;
     color: white;
     border-color: purple;
-}
-.back{
-    position: fixed;
-    font-weight: bold;
-    top: 10px;      
-    left: 10px;    
-    padding: 10px 20px;
-    color:rgb(240, 240, 240);
-    border: 2px solid rgb(255, 255, 255); 
-    background-color: rgb(10, 25, 47);
-    font-size: 16px;
-    cursor: pointer;
 }

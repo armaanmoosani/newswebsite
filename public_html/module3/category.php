@@ -1,4 +1,6 @@
 <?php
+    session_start();
+    require "signedin.php";
     require 'database.php';
     if (!isset($_SESSION['token'])) {
         $_SESSION['token'] = bin2hex(random_bytes(32)); 

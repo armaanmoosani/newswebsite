@@ -9,6 +9,9 @@
             die("Request forgery detected");
         }
     }
+    if(isset($_POST['logout'])){
+        session_destroy();
+    }
 ?>
 <html lang="en">
 <head>
@@ -33,11 +36,16 @@
             </li>
             <?php 
             if(isset($_SESSION['user_id'])){ ?>
-                <li><a href="submitstory.php?loggedin=true">Submit Story</a></li> 
+                <li><a href="submitstory.php">Submit Story</a></li> 
             <?php }
             else{ ?>
-                <li><a href="submitstory.php?loggedin=false">Submit Story</a></li>
-           <?php } ?>
+                <li>
+                <form action="index.php" method="POST">
+                <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
+                <button type="submit" name="storynotloggedin" class="link-button">Submit Story</button>
+                </form>
+                </li>
+            <?php } ?>
            <li>
                 <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
                     <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>" />
