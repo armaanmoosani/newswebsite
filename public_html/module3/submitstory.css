@@ -61,3 +61,15 @@ body{
     color: white;
     border-color: purple;
 }
+.back{
+    position: fixed;
+    font-weight: bold;
+    top: 10px;      
+    left: 10px;    
+    padding: 10px 20px;
+    color:rgb(240, 240, 240);
+    border: 2px solid rgb(255, 255, 255); 
+    background-color: rgb(10, 25, 47);
+    font-size: 16px;
+    cursor: pointer;
+}

@@ -47,9 +47,13 @@
         header("Location: newssite.php");
         exit;
     }
+    
     if(isset($_GET['loggedin'])){
         $submitstory = htmlentities($_GET['loggedin']);
         if($submitstory == "true"){ ?>
+            <form action= "newssite.php" method="GET">
+                <button name='back' type='submit' class='back'>Back</button>
+            </form>
             <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
                 <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>" />
                 <label class="titlelabel">Title:</label><br><br>
