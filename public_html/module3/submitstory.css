@@ -1,0 +1,63 @@
+
+
+h1{
+    text-align: center;
+    font-size: 7ch;
+}
+body{
+    background-color: rgb(245, 245, 245);
+    text-align: center;
+}
+.title{
+    font-size: x-large;
+    font-weight: bold;
+}
+.titlelabel{
+    font-size: x-large;
+}
+.body{
+    font-size: medium;
+    font-family: 'Merriweather', serif;
+    
+}
+.bodylabel, .url{
+    font-size: larger;
+}
+.category {
+    display: none;
+  }
+.tag {
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    background-color: rgb(238, 238, 238);
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+#technology:checked + .tag{
+    background-color: green;
+    color: white;
+    border-color: green;
+  }
+#business:checked + .tag{
+    background-color: rgb(138, 3, 3);
+    color: white;
+    border-color: rgb(138, 3, 3);
+}
+#sports:checked + .tag{
+    background-color: rgb(233, 30, 99);
+    color: white;
+    border-color: rgb(233, 30, 99);
+}
+#usnews:checked + .tag{
+    background-color: navy;
+    color: white;
+    border-color: navy;
+}
+#worldnews:checked + .tag{
+    background-color: purple;
+    color: white;
+    border-color: purple;
+}
