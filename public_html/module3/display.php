@@ -18,14 +18,14 @@ else{
     exit;
 }
 //from wiki
-$stmt = $mysqli->prepare("SELECT stories.title, stories.body, stories.time, stories.link, users.username FROM stories JOIN users ON stories.user_id = users.id  WHERE stories.id = ?");
+$stmt = $mysqli->prepare("SELECT stories.title, stories.body, stories.user_id, stories.time, stories.link, users.username FROM stories JOIN users ON stories.user_id = users.id  WHERE stories.id = ?");
 if (!$stmt) {
     printf("Query Prep Failed: %s\n", $mysqli->error);
     exit;
 }
 $stmt->bind_param('i', $id); 
 $stmt->execute();
-$stmt->bind_result($title, $body, $timestamp,$url, $username);
+$stmt->bind_result($title, $body, $user_id, $timestamp,$url, $username);
 if (!$stmt->fetch()) {
     header("Location: failure.html");
     exit;
@@ -48,22 +48,46 @@ $stmt->close();
     <p class="body"><?php echo htmlentities($body)?></p>
     <?php if(!empty($url)){ ?>
         <a class="url" href="<?php echo htmlentities($url)?>"><?php echo htmlentities($url)?></a>
-    <?php } ?><br><br>
+    <?php } 
+    if($_SESSION['user_id'] == $user_id){ ?>
+        <form action="deletestory.php" method="POST">
+        <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>" />
+        <input type="hidden" name="story_id" value="<?php echo $id; ?>" />
+        <button type="submit" class="deletebtn">&#x274C</button> 
+        <!-- hexadecimal utf-8 representation of ❌. source: https://www.w3schools.com/charsets/ref_emoji.asp -->
+    </form>
+    <?php }
+    ?>
+    <br><br>
     <h2 class="titlelabel">Comments:</h2>
     <?php
-        $stmt = $mysqli->prepare("SELECT comments.body, comments.time, users.username FROM comments JOIN users ON comments.user_id = users.id WHERE comments.story_id = ? ORDER BY comments.time ASC");
+        $stmt = $mysqli->prepare("SELECT comments.body, comments.time, comments.comment_id, users.username, comments.user_id FROM comments JOIN users ON comments.user_id = users.id WHERE comments.story_id = ? ORDER BY comments.time ASC");
         if (!$stmt) {
             printf("Query Prep Failed: %s\n", $mysqli->error);
             exit;
         }
         $stmt->bind_param('i', $id);
         $stmt->execute();
-        $stmt->bind_result($comment, $comment_time, $comment_user);
-        //some functions bwloe from php manual
+        $stmt->bind_result($comment, $comment_time, $comment_id, $comment_user, $comment_user_id);
+
+        //some functions below from php manual
         while ($stmt->fetch()) { ?>
             <h3 class="user"><?php echo $comment_user ?></h3>
             <p class="commenttime"> <?php echo htmlentities(date("F j, g:i a", strtotime($comment_time))); ?></p> 
-            <p class="comment"><?php echo htmlentities($comment) ?></p><br>
+            <p class="comment"><?php echo htmlentities($comment) ?></p>
+            <?php
+            if($_SESSION['user_id'] == $comment_user_id){ ?>
+                <form action="deletecomment.php" method="POST">
+                    <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>" />
+                    <input type="hidden" name="comment_id" value="<?php echo $comment_id; ?>" />
+                    <input type="hidden" name="story_id" value="<?php echo $id; ?>" />
+                    <button type="submit" class="deletebtn">&#x274C</button> 
+                    <!-- hexadecimal utf-8 representation of ❌. source: https://www.w3schools.com/charsets/ref_emoji.asp -->
+                </form>
+                <br>
+            <?php 
+            }
+             ?>
     <?php } 
     $stmt->close();
     if(isset($_SESSION['user_id'])){

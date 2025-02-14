@@ -11,6 +11,8 @@
     }
     if(isset($_POST['logout'])){
         session_destroy();
+        header("Location: newssite.php");
+        exit;
     }
 ?>
 <html lang="en">
