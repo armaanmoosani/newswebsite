@@ -1,6 +1,5 @@
 <?php
     session_start();
-    require "signedin.php";
     require 'database.php';
     if (!isset($_SESSION['token'])) {
         $_SESSION['token'] = bin2hex(random_bytes(32)); 
@@ -10,7 +9,6 @@
             die("Request forgery detected");
         }
     }
-    $category;
     if(isset($_GET['category'])){
         $category = htmlentities($_GET['category']);
     }

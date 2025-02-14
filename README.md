@@ -2,7 +2,7 @@
 # CSE330
 Armaan Moosani 520302 @armaanmoosani
 
-
+http://ec2-3-133-108-91.us-east-2.compute.amazonaws.com/~armaanmoosani/module3/newssite.php
 
 
 

@@ -1,11 +1,11 @@
-h1{ 
-    text-align:center;
-    font-size: 6vw;
-    color:rgb(240, 240, 240); 
-    background-color: rgb(10, 25, 47); 
-    font-family: Arial, sans-serif; 
-    font-weight: bold;
-    text-shadow: 3px 3px 5px;
+.title{
+    display: flex;
+    flex-direction: column;
+}
+h1{
+    color: white;
+    padding: 15px 0;
+    font-size: 24px;
 }
 
 body{
@@ -15,6 +15,39 @@ body{
     height: 100vh; 
     justify-content: center;
     text-align:center;
+}
+/*code block below from https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns  */
+.news-grid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 20px;                          
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.news-item{
+    background-color: #fff;              
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+.news-title {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+    text-decoration: none; 
+}
+.news-item:hover{
+    cursor: pointer;
+}
+.news-item:hover .news-title{
+    text-decoration: underline;
+}
+.time {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: auto; 
 }
 .p1,.p2{
     color:rgb(200, 1, 1); 
