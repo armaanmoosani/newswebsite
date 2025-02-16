@@ -38,10 +38,8 @@ body{
     margin-bottom: 10px;
     text-decoration: none; 
 }
-.news-item:hover{
+.news-title:hover {
     cursor: pointer;
-}
-.news-item:hover .news-title{
     text-decoration: underline;
 }
 .time {
@@ -56,4 +54,55 @@ body{
     padding: 0;
     justify-content: center;
     text-align:center;
+}
+.tag {
+    display: inline-block;
+    background-color: #cac8c89c;
+    color: black;
+    padding: 5px 10px;
+    font-size: 12px;
+    text-decoration: none;
+}
+.tag:hover {
+    background-color: white;
+}
+.tag.technology{
+    background-color: green;
+    color: white;
+    border-color: green;
+}
+.tag.technology:hover{
+    background-color: rgb(65, 214, 65);
+}
+.tag.business{
+    background-color: rgb(138, 3, 3);
+    color: white;
+    border-color: rgb(138, 3, 3);
+}
+.tag.business:hover{
+    background-color: rgb(235, 9, 9);
+}
+.tag.sports{
+    background-color: rgb(233, 30, 99);
+    color: white;
+    border-color: rgb(233, 30, 99);
+}
+.tag.sports:hover{
+    background-color: rgb(255, 93, 147);
+}
+.tag.usnews{
+    background-color: navy;
+    color: white;
+    border-color: navy;
+}
+.tag.usnews:hover{
+    background-color: rgb(83, 83, 208)
+}
+.tag.worldnews{
+    background-color: purple;
+    color: white;
+    border-color: purple;
+}
+.tag.worldnews:hover{
+    background-color: rgb(228, 57, 228);
 }

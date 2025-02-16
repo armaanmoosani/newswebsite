@@ -10,7 +10,7 @@ if(isset($_POST['token'])){
     }
 }
 if(isset($_GET['id'])){
-    $id = $_GET['id'];
+    $id = (int) $_GET['id'];
 }
 elseif(isset($_POST["signup"])){
     header("Location: index.php");

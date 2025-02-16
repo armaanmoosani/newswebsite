@@ -62,7 +62,7 @@
                 <textarea name="body" class="body" rows="10" cols="33" required></textarea><br><br>
                 <?php 
                 foreach($categories as $category){ 
-                    $id = strtolower(str_replace([' ', '.'], '', $category));?>
+                    $id = htmlentities(strtolower(str_replace([' ', '.'], '', $category)));?>
                     <input type="radio" name="category" class="category" value="<?php echo htmlentities($id); ?>" id="<?php echo htmlentities($id); ?>" required >
                     <label for="<?php echo htmlentities($id); ?>" class="tag"><?php echo $category; ?></label>
                 <?php } ?><br><br>
