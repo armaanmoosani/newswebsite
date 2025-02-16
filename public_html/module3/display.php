@@ -88,6 +88,11 @@ if (isset($_POST['update_comment_id']) && isset($_POST['updated_comment'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlentities($title)?></title>
+    <link rel="icon" type="image/png" href="/~armaanmoosani/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/~armaanmoosani/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/~armaanmoosani/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/~armaanmoosani/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/~armaanmoosani/favicon/site.webmanifest" />
     <link rel="stylesheet" type="text/css" href="display.css">
     <link rel="stylesheet" type="text/css" href="nav.css">
 </head>

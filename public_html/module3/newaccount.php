@@ -13,6 +13,11 @@ if (!isset($_SESSION['token'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Account</title>
     <link rel="stylesheet" type="text/css" href="login.css">
+    <link rel="icon" type="image/png" href="/~armaanmoosani/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/~armaanmoosani/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/~armaanmoosani/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/~armaanmoosani/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/~armaanmoosani/favicon/site.webmanifest" />
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
