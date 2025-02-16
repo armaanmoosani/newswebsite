@@ -15,11 +15,11 @@
             <li><a href="newssite.php">Home</a></li>
             <li class="categories"><a href="#">Categories</a>
                 <ul class="categories_content">
-                    <li><a href="display.php?category=technology">Technology</a></li>
-                    <li><a href="display.php?category=us">U.S.</a></li>
-                    <li><a href="display.php?category=sports">Sports</a></li>
-                    <li><a href="display.php?category=business">Business</a></li>
-                    <li><a href="display.php?category=world">World</a></li>
+                    <li><a href="newssite.php?category=technology">Technology</a></li>
+                    <li><a href="newssite.php?category=usnews">U.S. News</a></li>
+                    <li><a href="newssite.php?category=sports">Sports</a></li>
+                    <li><a href="newssite.php?category=business">Business</a></li>
+                    <li><a href="newssite.php?category=worldnews">World News</a></li>
                 </ul>
             </li>
             <?php 

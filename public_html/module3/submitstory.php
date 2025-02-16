@@ -63,7 +63,7 @@
                 <?php 
                 foreach($categories as $category){ 
                     $id = strtolower(str_replace([' ', '.'], '', $category));?>
-                    <input type="radio" name="category" class="category" value="<?php echo htmlentities($category); ?>" id="<?php echo htmlentities($id); ?>" required >
+                    <input type="radio" name="category" class="category" value="<?php echo htmlentities($id); ?>" id="<?php echo htmlentities($id); ?>" required >
                     <label for="<?php echo htmlentities($id); ?>" class="tag"><?php echo $category; ?></label>
                 <?php } ?><br><br>
                 <label class="url">Attached Link:</label><br><br>

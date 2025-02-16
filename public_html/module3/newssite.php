@@ -4,8 +4,15 @@ require 'database.php';
 if (!isset($_SESSION['token'])) {
     $_SESSION['token'] = bin2hex(random_bytes(32)); 
 }
+if(isset($_GET['category'])){
+    $category = htmlentities($_GET['category']);
+    $stmt = $mysqli->prepare("SELECT id, title, `time` FROM stories WHERE category = ? ORDER BY `time` DESC");
+    $stmt->bind_param('s', $category);
+}
 //from wiki
-$stmt = $mysqli->prepare("SELECT id, title, `time` FROM stories ORDER BY `time` DESC");
+else{
+    $stmt = $mysqli->prepare("SELECT id, title, `time` FROM stories ORDER BY `time` DESC");
+}
 if (!$stmt) {
     printf("Query Prep Failed: %s\n", $mysqli->error);
     exit;

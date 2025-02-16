@@ -12,6 +12,15 @@ if(isset($_POST['token'])){
 if(isset($_GET['id'])){
     $id = $_GET['id'];
 }
+elseif(isset($_POST["signup"])){
+    header("Location: index.php");
+    exit;
+}
+elseif(isset($_POST["logout"])){
+    session_destroy();
+    header("Location: newssite.php");
+    exit;
+}
 else{
     header("Location: failure.html");
     exit;
@@ -88,7 +97,7 @@ if (isset($_POST['update_comment_id']) && isset($_POST['updated_comment'])) {
         if(!isset($_POST['edit_story_id'])){ ?>
             <h1><?php echo htmlentities($title)?></h1>
             <p class="author">BY <?php echo htmlentities(strtoupper($username))?></p>
-            <p class="time">Updated <?php echo htmlentities(date("F j, g:i a", strtotime($timestamp))); ?></p>
+            <p class="time">Updated <?php echo htmlentities(date("F j, g:i a", strtotime($timestamp))); ?></p><br>
             <p class="body"><?php echo htmlentities($body)?></p>
             <?php 
             if(!empty($url)){ ?>
