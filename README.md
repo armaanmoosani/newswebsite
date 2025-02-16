@@ -4,7 +4,7 @@ Armaan Moosani 520302 @armaanmoosani
 
 http://ec2-3-133-108-91.us-east-2.compute.amazonaws.com/~armaanmoosani/module3/newssite.php
 
-
+For my creative portion, I implemented a tag system where when a user creates a story, they tag it with a category. On the website, you can sort the stories by category. I implemented recaptcha for my login and made it where the time a story or comment was posted/updated is displayed. I also made where editing is inline. Furthermore, I included a navigation bar where a user can click to go back to home, click a category to sort by, logout/signin/, or submit a story.
 
 <br><br><br><br><br><br><br><br><br>
 Rubric
