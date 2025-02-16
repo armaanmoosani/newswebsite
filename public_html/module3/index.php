@@ -20,7 +20,7 @@
 <body>
     <h1>News</h1>
     <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
-        <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>" />
+        <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
         <label>Username</label> <br>
         <input type="text" name="user" required>
         <br><br>

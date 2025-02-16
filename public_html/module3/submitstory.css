@@ -1,5 +1,3 @@
-
-
 h1{
     text-align: center;
     font-size: 7ch;
@@ -7,12 +5,14 @@ h1{
 }
 body{
     background-color: rgb(10, 25, 47);
-    text-align: center;
     color: white;
+    text-align: center;
 }
 .title{
     font-size: x-large;
     font-weight: bold;
+    text-align: center;
+
 }
 .titlelabel{
     font-size: x-large;
