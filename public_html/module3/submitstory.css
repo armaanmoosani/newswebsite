@@ -40,7 +40,7 @@ body{
     border-radius: 10px;
     cursor: pointer;
   }
-
+/*cite: https://www.w3schools.com/css/default.asp */
 #technology:checked + .tag{
     background-color: green;
     color: white;
