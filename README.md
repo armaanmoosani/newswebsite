@@ -2,6 +2,8 @@
 
 A simple news website where users can view stories, categorized by tags, and read them by clicking on individual titles. The site also allows users to log in, submit their own stories, comment on stories, and edit or delete their own submissions. With added security via Google reCAPTCHA for logins.
 
+Link: http://ec2-3-133-108-91.us-east-2.compute.amazonaws.com/~armaanmoosani/module3/newssite.php
+
 ## Features
 
 - **User Login**: Users can log in to submit their stories.
