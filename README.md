@@ -1,43 +1,31 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/0Ry1MN6H)
-# CSE330
-Armaan Moosani 520302 @armaanmoosani
+# News Site
 
-http://ec2-3-133-108-91.us-east-2.compute.amazonaws.com/~armaanmoosani/module3/newssite.php
+A simple news website where users can view stories, categorized by tags, and read them by clicking on individual titles. The site also allows users to log in, submit their own stories, comment on stories, and edit or delete their own submissions. With added security via Google reCAPTCHA for logins.
 
-For my creative portion, I implemented a tag system where when a user creates a story, they tag it with a category. On the website, you can sort the stories by category. I implemented recaptcha for my login and made it where the time a story or comment was posted/updated is displayed. I also made where editing is inline. Furthermore, I included a navigation bar where a user can click to go back to home, click a category to sort by, logout/signin/, or submit a story.
+## Features
 
-<br><br><br><br><br><br><br><br><br>
-Rubric
+- **User Login**: Users can log in to submit their stories.
+- **Story Categories**: Stories are organized by categories and displayed on the homepage.
+- **Dynamic Story Layout**: Stories are displayed in a dynamic, responsive grid layout that adapts to different screen sizes, ensuring an optimal viewing experience on all devices.
+- **Story Submission**: Logged-in users can submit new stories through a dedicated form.
+- **Commenting**: Users can comment on stories they read.
+- **Story Management**: Users can edit or delete their own stories after submission.
+- **Captcha**: Google reCAPTCHA is integrated for secure login.
+- **Responsive Design**: The site adapts well to various screen sizes.
+- **No Sign-Up Required**: Users can browse the site without logging in.
 
+## Pages
 
-| Possible | Requirement                                                                      |
-| -------- | -------------------------------------------------------------------------------- | 
-| 3        | A session is created when a user logs in                                         | 
-| 3        | New users can register                                                           | 
-| 3        | Passwords are hashed and salted                                                  | 
-| 3        | Users can log out                                                                | 
-| 8        | User can edit and delete their own stories/comments but not those of other users | 
-| 4        | Relational database is configure with correct data types and foreign keys        | 
-| 3        | Stories can be posted                                                            | 
-| 3        | A link can be associated with each story and is stored in its own database field | 
-| 4        | Comments can be posted in association with a story                               | 
-| 3        | Stories can be edited and deleted                                                |
-| 3        | Comments can be edited and deleted                                               | 
-| 3        | Code is well formatted and easy to read                                          |
-| 2        | Safe from SQL injection attacks                                                  | 
-| 3        | Site follows FIEO                                                                | 
-| 2        | All pages pass the W3C validator                                                 | 
-| 5        | CSRF tokens are passed when creating, editing, and deleting comments/stories     |
-| 4        | Site is intuitive to use and navigate                                            | 
-| 1        | Site is visually appealing                                                       |  
+1. **Homepage**: Displays all the latest stories in a dynamic grid layout. Stories are listed with their titles, timestamps, and categories.
+2. **Story Page**: Each story has its own page for detailed reading, where users can comment and interact.
+3. **Submit Story Page**: Logged-in users can submit new stories to be featured on the site.
+4. **Login Page**: Users can log in with their credentials to submit stories and manage their content.
+5. **Sign-Up Page**: Allows users to create a new account.
 
-## Creative Portion (15 possible)
+## Technologies Used
 
-| Feature | 
-| ------- |
-
-## Grade
-
-| Total Possible |
-| -------------- |
-| 75             |
+- **PHP**: Server-side logic for user authentication, story management, and comment handling.
+- **MySQL**: Database for storing user, story, and comment information.
+- **HTML/CSS**: Frontend for the user interface and layout.
+- **Google reCAPTCHA**: Integrated for verifying that users are human during login.
+- **Dynamic Tiling**: Stories are presented in a dynamic, grid-based layout, adjusting based on the number of stories and screen size, ensuring a flexible and responsive display.
