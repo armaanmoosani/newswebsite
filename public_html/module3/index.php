@@ -57,7 +57,7 @@
         }
         if(isset($_POST['login'])){
             //recapthca verify on backend: https://www.geeksforgeeks.org/google-recaptcha-integration-in-php/
-            $secret_key = "6LfB-coqAAAAAFGyUcNUV7MhprF6qJ33mWwtUdne"; 
+            $secret_key = getenv("RECAPTCHA_SECRET_KEY"); 
             $recaptcha_response = $_POST['g-recaptcha-response'];
             $url = 'https://www.google.com/recaptcha/api/siteverify?secret='
             . $secret_key . '&response=' . $recaptcha_response;
